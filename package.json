@@ -1,0 +1,14 @@
+{
+  "name": "email-scheduler-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm run start",
+    "install": "cd frontend && npm install"
+  },
+  "dependencies": {
+    "next": "16.1.4"
+  }
+}
