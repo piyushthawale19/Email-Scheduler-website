@@ -350,7 +350,7 @@ export default function ComposeEmail() {
 
                     {/* Schedule Button with Popup */}
                     <div className="schedule-button-wrapper" ref={schedulePopupRef}>
-                        <button
+                        {/* <button
                             className={`send-later-btn ${showSchedulePopup ? 'active' : ''}`}
                             onClick={() => setShowSchedulePopup(!showSchedulePopup)}
                             style={{
@@ -362,7 +362,7 @@ export default function ComposeEmail() {
                             }}
                         >
                             <span>Send Later</span>
-                        </button>
+                        </button> */}
 
                         {/* Schedule Popup - 318x364 dropdown */}
                         {showSchedulePopup && (
@@ -400,18 +400,33 @@ export default function ComposeEmail() {
                                     <input
                                         type="datetime-local"
                                         value={customDateTime}
-                                        onChange={(e) => setCustomDateTime(e.target.value)}
+                                        onChange={(e) => {
+                                            setCustomDateTime(e.target.value);
+                                            // Auto-set scheduled time when user picks a date/time
+                                            if (e.target.value) {
+                                                setScheduledTime(new Date(e.target.value));
+                                            }
+                                        }}
                                         className="schedule-datetime-picker"
                                     />
                                 </div>
 
                                 <div className="schedule-footer">
-                                    <button className="btn-secondary" onClick={() => setShowSchedulePopup(false)}>
+                                    <button className="btn-secondary" onClick={() => {
+                                        setShowSchedulePopup(false);
+                                        setCustomDateTime('');
+                                        setScheduledTime(null);
+                                    }}>
                                         Cancel
                                     </button>
                                     <button
                                         className="btn-done"
-                                        onClick={handleCustomDateTime}
+                                        onClick={() => {
+                                            if (customDateTime) {
+                                                setScheduledTime(new Date(customDateTime));
+                                            }
+                                            setShowSchedulePopup(false);
+                                        }}
                                         disabled={!customDateTime}
                                     >
                                         Schedule

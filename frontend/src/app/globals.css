@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
- 
 :root {
   /* Primary Colors */
   --primary: #00b67a;
@@ -58,7 +57,6 @@
   --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
- 
 * {
   box-sizing: border-box;
   margin: 0;
@@ -83,7 +81,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
- 
 .login-container {
   display: flex;
   flex-direction: column;
@@ -205,14 +202,12 @@ body {
   cursor: not-allowed;
 }
 
- 
 .dashboard-layout {
   display: flex;
   height: 100vh;
   overflow: hidden;
 }
 
- 
 .sidebar {
   width: var(--sidebar-width);
   height: 100vh;
@@ -359,7 +354,6 @@ body {
   border-radius: 9999px;
 }
 
- 
 .main-content {
   flex: 1;
   display: flex;
@@ -367,7 +361,6 @@ body {
   overflow: hidden;
 }
 
- 
 .header {
   height: var(--header-height);
   background: var(--bg-primary);
@@ -430,7 +423,6 @@ body {
   color: var(--text-primary);
 }
 
- 
 .email-list-container {
   flex: 1;
   overflow-y: auto;
@@ -524,7 +516,6 @@ body {
   opacity: 1;
 }
 
- 
 .compose-fullpage {
   position: fixed;
   inset: 0;
@@ -844,7 +835,6 @@ body {
   margin: 0 8px;
 }
 
- 
 .schedule-sidebar {
   width: 280px;
   border-left: 1px solid var(--border);
@@ -956,7 +946,6 @@ body {
   color: white;
 }
 
- 
 .schedule-popup {
   position: absolute;
   top: 100%;
@@ -1025,7 +1014,6 @@ body {
   color: var(--text-primary);
 }
 
- 
 .empty-state {
   display: flex;
   flex-direction: column;
@@ -1060,7 +1048,6 @@ body {
   max-width: 320px;
 }
 
- 
 .loading-container {
   display: flex;
   align-items: center;
@@ -1083,7 +1070,6 @@ body {
   }
 }
 
- 
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -1118,7 +1104,6 @@ body {
   color: #d97706;
 }
 
- 
 @media (max-width: 768px) {
   .sidebar {
     position: fixed;
@@ -1143,7 +1128,6 @@ body {
   }
 }
 
- 
 .user-info-wrapper {
   position: relative;
 }
@@ -1219,7 +1203,6 @@ body {
   color: var(--error);
 }
 
- 
 .filter-dropdown {
   position: absolute;
   top: 100%;
@@ -1301,7 +1284,6 @@ body {
   color: #f59e0b;
 }
 
- 
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1456,7 +1438,6 @@ body {
   cursor: not-allowed;
 }
 
- 
 .toolbar-btn {
   width: auto;
   padding: 4px 8px;
@@ -1477,7 +1458,6 @@ body {
   color: var(--text-primary);
 }
 
- 
 .attachments-section {
   padding: 16px 24px;
   border-top: 1px solid var(--border);
@@ -1549,13 +1529,11 @@ body {
   color: white;
 }
 
- 
 .icon-btn.active {
   background: var(--primary-light);
   color: var(--primary);
 }
 
- 
 .email-time-badge.processing {
   background: #dbeafe;
   color: #2563eb;
@@ -1571,7 +1549,6 @@ body {
   color: #d97706;
 }
 
- 
 .email-list-header {
   display: flex;
   align-items: center;
@@ -1598,7 +1575,6 @@ body {
   gap: 4px;
 }
 
- 
 .email-detail-view {
   flex: 1;
   display: flex;
@@ -1728,14 +1704,12 @@ body {
   background: rgba(239, 68, 68, 0.1) !important;
 }
 
- 
 .load-more-container {
   display: flex;
   justify-content: center;
   padding: 24px;
 }
 
- 
 .compose-editor-container {
   flex: 1;
   display: flex;
@@ -1779,7 +1753,6 @@ body {
   border-style: solid;
 }
 
- 
 .attachments-thumbnails {
   display: flex;
   flex-wrap: wrap;
@@ -1863,7 +1836,6 @@ body {
   color: white;
 }
 
- 
 .schedule-button-wrapper {
   position: relative;
 }
@@ -1889,7 +1861,6 @@ body {
   color: white;
 }
 
- 
 .schedule-popup {
   position: absolute;
   top: calc(100% + 8px);
@@ -1928,7 +1899,6 @@ body {
   border-color: var(--primary);
 }
 
- 
 .modal-overlay {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
