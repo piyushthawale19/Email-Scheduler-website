@@ -14,6 +14,7 @@ const createRedisClient = (): Redis => {
             console.log(`Redis connection retry attempt ${times}, waiting ${delay}ms`);
             return delay;
         },
+        tls: config.redis.tls,
     };
 
     const redis = new Redis(redisConfig);

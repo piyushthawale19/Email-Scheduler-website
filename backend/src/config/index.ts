@@ -38,6 +38,8 @@ export const config = {
         password: process.env.REDIS_PASSWORD || undefined,
         maxRetriesPerRequest: null, // Required for BullMQ
         enableReadyCheck: false,
+        // Add TLS support if REDIS_TLS is set to true (required for managed services like Upstash)
+        tls: process.env.REDIS_TLS === 'true' ? { rejectUnauthorized: false } : undefined,
     },
 
     // JWT Configuration
