@@ -15,7 +15,7 @@
     "db:studio": "prisma studio",
     "lint": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit",
-    "postinstall": "npx prisma generate"
+    "postinstall": "node ./node_modules/prisma/build/index.js generate"
   },
   "dependencies": {
     "@prisma/client": "^6.5.0",
