@@ -11,7 +11,7 @@ import {
   EmailJobData,
   PaginationInfo,
 } from "../types";
-import { EmailStatus } from "@prisma/client";
+import { EmailStatus, Prisma } from "@prisma/client";
 import path from "path";
 import fs from "fs";
 
@@ -86,13 +86,16 @@ export const scheduleEmails = async (
 
     // Process attachments from uploaded files
     const attachments = req.files
-      ? (req.files as Express.Multer.File[]).map(file => ({
-        filename: file.originalname,
-        size: file.size,
-        mimetype: file.mimetype,
-        path: file.path,
-      }))
+      ? (req.files as Express.Multer.File[]).map((file) => ({
+          filename: file.originalname,
+          size: file.size,
+          mimetype: file.mimetype,
+          path: file.path,
+        }))
       : [];
+
+    const attachmentsPayload: Prisma.InputJsonValue | undefined =
+      attachments.length > 0 ? attachments : undefined;
 
     console.log(`📎 Attachments: ${attachments.length} files`);
 
@@ -203,7 +206,7 @@ export const scheduleEmails = async (
             batchId: batch.id,
             batchIndex: index,
             status: "SCHEDULED",
-            attachments: attachments.length > 0 ? attachments : null,
+            attachments: attachmentsPayload,
           },
         });
       }),
